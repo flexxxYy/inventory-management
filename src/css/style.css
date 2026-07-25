@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: #eef2f7;
+    padding: 12px 10px 20px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.app {
+    max-width: 600px;
+    width: 100%;
+    background: white;
+    border-radius: 28px;
+    padding: 18px 14px 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0b2a4a;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.subhead {
+    color: #3e5e7a;
+    font-size: 0.85rem;
+    padding-left: 6px;
+    margin-bottom: 14px;
+    border-left: 3px solid #2a7de1;
+    padding-left: 12px;
+    background: #f2f8ff;
+    border-radius: 0 10px 10px 0;
+    padding: 6px 12px;
+}
+
+/* --- панель поиска/фильтра --- */
+.toolbar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f5f9ff;
+    border-radius: 40px;
+    padding: 0 16px;
+    border: 1px solid #dce5f0;
+}
+
+.search-box input {
+    border: none;
+    padding: 14px 0;
+    width: 100%;
+    font-size: 1rem;
+    background: transparent;
+    outline: none;
+}
+
+.filter-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    align-items: center;
+}
+
+.filter-row label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1f3b57;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.filter-row select {
+    padding: 10px 16px;
+    border-radius: 40px;
+    border: 1px solid #d9e2ef;
+    background: white;
+    font-size: 0.95rem;
+    flex: 1;
+    min-width: 120px;
+}
+
+/* --- статистика --- */
+.stats {
+    background: #f2f7ff;
+    padding: 10px 16px;
+    border-radius: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    font-size: 0.85rem;
+    gap: 4px 8px;
+}
+
+.stats .badge {
+    background: #1f4e7a;
+    color: white;
+    padding: 2px 14px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.8rem;
+}
+
+/* --- список товаров (карточки) --- */
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+    max-height: 65vh;
+    overflow-y: auto;
+    padding-right: 2px;
+}
+
+.item-card {
+    background: #fafcff;
+    border-radius: 20px;
+    padding: 12px 14px;
+    border: 1px solid #e6edf6;
+    display: flex;
+    
+    align-items: center;
+    gap: 8px 10px;
+    transition: 0.1s;
+}
+
+/* === МЕСТО ДЛЯ ФОТО === */
+.item-card .photo {
+    width: 182px;
+    height: 182px;
+    border-radius: 12px;
+    background: #eef3f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+    border: 1px solid #dce5f0;
+    overflow: hidden;
+}
+
+.item-card .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-card .info {
+    flex: 2 1 120px;
+    min-width: 100px;
+}
+
+.item-card .info .name {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #0b1f33;
+    line-height: 1.3;
+}
+
+.item-card .info .sku-cat {
+    font-size: 0.7rem;
+    color: #4f6f8e;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 8px;
+    margin-top: 2px;
+}
+
+.item-card .info .sku-cat .cat {
+    background: #e2ebf6;
+    padding: 0 10px;
+    border-radius: 40px;
+}
+
+.item-card .qty-control {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    flex-wrap: nowrap;
+}
+
+.item-card .qty-control .qty {
+    font-weight: 700;
+    font-size: 1.2rem;
+    min-width: 2.4rem;
+    text-align: center;
+    color: #0b2a4a;
+}
+
+/* === БОЛЬШИЕ КНОПКИ ДЛЯ ТЕЛЕФОНА === */
+.btn-big {
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 40px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.12s;
+    touch-action: manipulation;
+    user-select: none;
+    background: #edf3fc;
+    color: #1f4b72;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.btn-big:active {
+    transform: scale(0.92);
+    background: #d5e3f5;
+}
+
+.btn-big.minus {
+    background: #f3f0fa;
+    color: #7a4e9e;
+}
+
+.btn-big.plus {
+    background: #e3f0fe;
+    color: #1a5e9e;
+}
+
+.btn-big.danger {
+    background: #fee9e9;
+    color: #b13a3a;
+    font-size: 1.2rem;
+}
+
+.btn-big.reset {
+    background: #f1f4f9;
+    color: #3f5f7a;
+    font-size: 1.2rem;
+    width: 40px;
+    height: 40px;
+}
+
+.btn-big.delete {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+}
+
+.action-group {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+/* --- форма добавления --- */
+.add-row {
+    background: #f5faff;
+    border-radius: 40px;
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.add-row input, .add-row select {
+    padding: 12px 14px;
+    border-radius: 40px;
+    border: 1px solid #d9e2ef;
+    background: white;
+    font-size: 0.95rem;
+    outline: none;
+    flex: 1 0 100px;
+    min-width: 70px;
+}
+
+.add-row input:focus, .add-row select:focus {
+    border-color: #2a7de1;
+    box-shadow: 0 0 0 3px rgba(42, 125, 225, 0.12);
+}
+
+.add-row button {
+    background: #1f4e7a;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.15s;
+    flex: 1 0 auto;
+}
+
+.add-row button:active {
+    background: #0f3a5c;
+    transform: scale(0.97);
+}
+
+.empty-message {
+    text-align: center;
+    padding: 30px 10px;
+    color: #567594;
+    font-weight: 500;
+}
+
+.footer {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    color: #567594;
+    text-align: right;
+    opacity: 0.7;
+}
+
+/* адаптив */
+@media (max-width: 480px) {
+    .app { padding: 12px 8px; }
+    .item-card { padding: 10px 10px; }
+    .btn-big { width: 44px; height: 44px; font-size: 1.6rem; }
+    .btn-big.reset, .btn-big.delete { width: 36px; height: 36px; font-size: 1rem; }
+    .add-row input, .add-row select { padding: 10px 12px; font-size: 0.9rem; }
+    .item-card .photo { width: 44px; height: 44px; font-size: 1.3rem; }
+}

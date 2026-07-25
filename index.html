@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Складской учёт</title>
+    <link rel="icon" href="./src/assets/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./src/css/style.css">
+</head>
+<body>
+    <div class="app" id="app">
+        <h1>📦 Склад. Подсчёт</h1>
+        <div class="subhead">Быстрый учёт, поиск, фильтрация и корректировка остатков</div>
+
+        <div class="toolbar">
+            <div class="search-box">
+                <span>🔍</span>
+                <input type="text" id="searchInput" placeholder="Поиск по названию..." />
+            </div>
+            <div class="filter-row">
+                <label>📂 <select id="categoryFilter">
+                    <option value="all">Все категории</option>
+                    <option value="Батончики">Батончики</option>
+                    <option value="Конфеты/Мармелад">Конфеты/Мармелад</option>
+                    <option value="Снеки">Снеки</option>
+                    <option value="Напитки">Напитки</option>
+                    <option value="Энергетики">Энергетики</option>
+                    <option value="Кола/Лимонады">Кола/Лимонады</option>
+                    <option value="Горячее питание">Горячее питание</option>
+                    <option value="Прочее">Прочее</option>
+                </select></label>
+            </div>
+        </div>
+
+        <div class="stats" id="statsBar">
+            <span>📦 <strong id="totalItems">0</strong> позиций</span>
+            <span>🧮 <strong id="totalStock">0</strong> шт</span>
+            <span class="badge" id="filteredBadge">показано: 0</span>
+        </div>
+
+        <div class="list" id="inventoryList"></div>
+
+        <div class="add-row">
+            <input type="text" id="newName" placeholder="Название" value="Новый товар" />
+            <select id="newCategory">
+                <option value="Батончики">Батончики</option>
+                <option value="Конфеты/Мармелад">Конфеты/Мармелад</option>
+                <option value="Снеки">Снеки</option>
+                <option value="Напитки">Напитки</option>
+                <option value="Энергетики">Энергетики</option>
+                <option value="Кола/Лимонады">Кола/Лимонады</option>
+                <option value="Горячее питание">Горячее питание</option>
+                <option value="Прочее">Прочее</option>
+            </select>
+            <input type="number" id="newQuantity" placeholder="Кол-во" value="1" min="0" step="1" style="max-width:80px;" />
+            <button id="addItemBtn">➕ Добавить</button>
+        </div>
+        <div class="footer">нажмите + / − для быстрого пересчёта</div>
+    </div>
+
+    <script src="./src/js/app.js"></script>
+</body>
+</html>
