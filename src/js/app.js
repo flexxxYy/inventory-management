@@ -234,6 +234,9 @@ function deleteItem(id) {
 }
 
 function resetQuantity(id) {
+    
+    if (!confirm("Сбросить до 10?")) return;
+
     const item = inventory.find(p => p.id === id);
     if (!item) return;
     item.quantity = 10;
